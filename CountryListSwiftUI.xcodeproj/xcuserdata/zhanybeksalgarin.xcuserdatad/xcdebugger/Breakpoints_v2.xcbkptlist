@@ -14,10 +14,10 @@
             filePath = "CountryListSwiftUI/ViewModel/ListVIewVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "getData()"
-            landmarkType = "7">
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "ListViewVM"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "729DCF03-4127-4595-8FFA-CEF7826A2FFB - 6af5015459cdc7b"

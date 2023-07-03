@@ -16,7 +16,18 @@
 		D877FEF72A50C87000E2927E /* ListVIewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877FEF62A50C87000E2927E /* ListVIewVM.swift */; };
 		D877FEF92A50C8E900E2927E /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877FEF82A50C8E900E2927E /* APICaller.swift */; };
 		D877FEFE2A52138200E2927E /* DetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877FEFD2A52138200E2927E /* DetailListView.swift */; };
+		D877FF072A536E1500E2927E /* CountryListSwiftUI_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877FF062A536E1500E2927E /* CountryListSwiftUI_Tests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D877FF082A536E1600E2927E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D877FED42A50BDF700E2927E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D877FEDB2A50BDF700E2927E;
+			remoteInfo = CountryListSwiftUI;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D877FEDC2A50BDF700E2927E /* CountryListSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountryListSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,10 +41,19 @@
 		D877FEF82A50C8E900E2927E /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		D877FEFB2A50F30C00E2927E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D877FEFD2A52138200E2927E /* DetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListView.swift; sourceTree = "<group>"; };
+		D877FF042A536E1500E2927E /* CountryListSwiftUI_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountryListSwiftUI_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D877FF062A536E1500E2927E /* CountryListSwiftUI_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListSwiftUI_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D877FED92A50BDF700E2927E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D877FF012A536E1500E2927E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				D877FEDE2A50BDF700E2927E /* CountryListSwiftUI */,
+				D877FF052A536E1500E2927E /* CountryListSwiftUI_Tests */,
 				D877FEDD2A50BDF700E2927E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				D877FEDC2A50BDF700E2927E /* CountryListSwiftUI.app */,
+				D877FF042A536E1500E2927E /* CountryListSwiftUI_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +146,14 @@
 			path = DetailView;
 			sourceTree = "<group>";
 		};
+		D877FF052A536E1500E2927E /* CountryListSwiftUI_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D877FF062A536E1500E2927E /* CountryListSwiftUI_Tests.swift */,
+			);
+			path = CountryListSwiftUI_Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +174,24 @@
 			productReference = D877FEDC2A50BDF700E2927E /* CountryListSwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D877FF032A536E1500E2927E /* CountryListSwiftUI_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D877FF0A2A536E1600E2927E /* Build configuration list for PBXNativeTarget "CountryListSwiftUI_Tests" */;
+			buildPhases = (
+				D877FF002A536E1500E2927E /* Sources */,
+				D877FF012A536E1500E2927E /* Frameworks */,
+				D877FF022A536E1500E2927E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D877FF092A536E1600E2927E /* PBXTargetDependency */,
+			);
+			name = CountryListSwiftUI_Tests;
+			productName = CountryListSwiftUI_Tests;
+			productReference = D877FF042A536E1500E2927E /* CountryListSwiftUI_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -156,6 +204,10 @@
 				TargetAttributes = {
 					D877FEDB2A50BDF700E2927E = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					D877FF032A536E1500E2927E = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D877FEDB2A50BDF700E2927E;
 					};
 				};
 			};
@@ -173,6 +225,7 @@
 			projectRoot = "";
 			targets = (
 				D877FEDB2A50BDF700E2927E /* CountryListSwiftUI */,
+				D877FF032A536E1500E2927E /* CountryListSwiftUI_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -184,6 +237,13 @@
 			files = (
 				D877FEE72A50BDF900E2927E /* Preview Assets.xcassets in Resources */,
 				D877FEE42A50BDF900E2927E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D877FF022A536E1500E2927E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +264,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D877FF002A536E1500E2927E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D877FF072A536E1500E2927E /* CountryListSwiftUI_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D877FF092A536E1600E2927E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D877FEDB2A50BDF700E2927E /* CountryListSwiftUI */;
+			targetProxy = D877FF082A536E1600E2927E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D877FEE82A50BDF900E2927E /* Debug */ = {
@@ -379,6 +455,42 @@
 			};
 			name = Release;
 		};
+		D877FF0B2A536E1600E2927E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9KLKLA3BF5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zhanybeksalgarin.CountryListSwiftUI-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountryListSwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CountryListSwiftUI";
+			};
+			name = Debug;
+		};
+		D877FF0C2A536E1600E2927E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9KLKLA3BF5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zhanybeksalgarin.CountryListSwiftUI-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountryListSwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CountryListSwiftUI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -396,6 +508,15 @@
 			buildConfigurations = (
 				D877FEEB2A50BDF900E2927E /* Debug */,
 				D877FEEC2A50BDF900E2927E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D877FF0A2A536E1600E2927E /* Build configuration list for PBXNativeTarget "CountryListSwiftUI_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D877FF0B2A536E1600E2927E /* Debug */,
+				D877FF0C2A536E1600E2927E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

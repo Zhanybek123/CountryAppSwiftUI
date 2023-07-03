@@ -29,7 +29,7 @@ struct ListView: View {
             }
         }
         .onAppear {
-            viewModel.getData()
+            viewModel.fetchData()
             print(viewModel.countriesData.count)
         }
     }

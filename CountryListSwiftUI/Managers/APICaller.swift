@@ -5,6 +5,9 @@
 //  Created by zhanybek salgarin on 7/1/23.
 //
 
+
+// Receiving data by using @escaping moethod. (Old version)
+
 import Foundation
 
 enum APIError: Error {
