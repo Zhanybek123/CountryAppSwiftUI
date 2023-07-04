@@ -12,7 +12,7 @@ struct CountryListSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ListView()
+                ListView(isActive: true)
             }
         }
     }

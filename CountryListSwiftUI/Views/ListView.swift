@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ListView: View {
-    @ObservedObject var viewModel = ListViewVM()
+    @ObservedObject var viewModel: ListViewVM
+    
+    init(isActive: Bool) {
+        _viewModel = ObservedObject(wrappedValue: ListViewVM(isActive: isActive))
+    }
     
     
     var body: some View {
@@ -38,7 +42,7 @@ struct ListView: View {
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ListView()
+            ListView(isActive: true)
         }
     }
 }

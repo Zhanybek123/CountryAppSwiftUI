@@ -50,11 +50,14 @@ struct ListRowView: View {
                     Text("Languages:")
                         .font(.system(size: 16, weight: .bold))
                     ForEach(0..<languages.values.count, id: \.self) { i in
-                        Text(languages.values[languages.values.index(languages.values.startIndex, offsetBy: i)])
+                        createTextViewFromDictionary(valueIndex: i)
                     }
                 }
             }
         }
+    }
+    private func createTextViewFromDictionary (valueIndex count: Int) -> Text {
+        return Text(languages.values[languages.values.index(languages.values.startIndex, offsetBy: count)])
     }
 }
 

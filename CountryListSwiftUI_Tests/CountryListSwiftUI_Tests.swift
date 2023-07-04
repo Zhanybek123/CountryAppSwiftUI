@@ -6,30 +6,42 @@
 //
 
 import XCTest
+@testable import CountryListSwiftUI
 
 final class CountryListSwiftUI_Tests: XCTestCase {
+    
+    var viewModel: ListViewVM?
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel = ListViewVM(isActive: true)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_ListViewVM_isActive_shouldReturnTrue() {
+        let isActive: Bool = true
+        
+        let vm = ListViewVM(isActive: isActive)
+        
+        XCTAssertEqual(vm.isActive, isActive)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_ListViewVM_completeURL_shouldBeEqual() {
+        let completeURL = "https://restcountries.com/v3.1/all?fields=languages,name,capital,currencies,flag,subregion"
+        
+        let vm = ListViewVM(isActive: true)
+        
+        XCTAssertEqual(completeURL, vm.completeURL)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_ListViewVM_countriesData_shouldBeTrue() {
+        let mockData = [Country(name: Country.Name(official: "Hashemite Kingdom of Jordan"), subregion: "Western Asia", capital: ["Amman"], flag: "🇯🇴", currencies: Country.Currencies(JOD: Country.Currencies.JOD.init(name: "Jordanian dinar", symbol: "د.ا")), languages: ["ara": "Arabic"])]
+        
+        let vm = ListViewVM(isActive: true)
+        vm.fetchData()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            XCTAssertEqual(vm.countriesData, mockData)
         }
+        
     }
 
 }

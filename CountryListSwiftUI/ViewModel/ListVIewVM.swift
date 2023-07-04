@@ -14,27 +14,41 @@ class ListViewVM: ObservableObject {
     @Published var error: CountryError?
     var cancellable = Set<AnyCancellable>()
     
-    // Old way of data retreival
+    @Published var isActive: Bool
     
-    /*
-    func getData() {
-        APIManager.shared.getCountries { [weak self] result in
-            switch result {
-            case .success(let success):
-                DispatchQueue.main.async {
-                    self?.countriesData = success
-                    //                    print(success.count)
-                }
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
-        }
+    let completeURL = "https://restcountries.com/v3.1/all?fields=languages,name,capital,currencies,flag,subregion"
+    
+    init(isActive: Bool) {
+        self.isActive = isActive
+        fetchData()
+        //        print(countriesData.first as Any)
     }
-    */
     
+    // Old way of data retreival
+    /*
+     func getData() {
+     APIManager.shared.getCountries { [weak self] result in
+     switch result {
+     case .success(let success):
+     DispatchQueue.main.async {
+     self?.countriesData = success
+     //                    print(success.count)
+     }
+     case .failure(let failure):
+     print(failure.localizedDescription)
+     }
+     }
+     }
+     */
+    
+    // Combine
     func fetchData() {
-        let completeURL = "https://restcountries.com/v3.1/all?fields=languages,name,capital,currencies,flag,subregionrr"
-        guard let url = URL(string: completeURL) else { return }
+        requestData(with: completeURL)
+    }
+    
+    func requestData(with url: String) {
+        
+        guard let url = URL(string: url) else { return }
         
         URLSession.shared.dataTaskPublisher(for: url)
             .receive(on: DispatchQueue.main)
@@ -67,21 +81,20 @@ class ListViewVM: ObservableObject {
     }
 }
 
-extension ListViewVM {
-    enum CountryError: Error {
-        case custom(error: Error)
-        case failedToDecode
-        case invalidStatusCode
-        
-        var errorDescription: String {
-            switch self {
-            case .custom(let error):
-                return error.localizedDescription
-            case .failedToDecode:
-                return "Failed to decode response"
-            case .invalidStatusCode:
-                return "Invalid status code"
-            }
+enum CountryError: Error {
+    case custom(error: Error)
+    case failedToDecode
+    case invalidStatusCode
+    
+    var errorDescription: String {
+        switch self {
+        case .custom(let error):
+            return error.localizedDescription
+        case .failedToDecode:
+            return "Failed to decode response"
+        case .invalidStatusCode:
+            return "Invalid status code"
         }
     }
 }
+
